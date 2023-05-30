@@ -61,9 +61,9 @@ python3 .\app.py
 
 ## 一些 DEMO
 ### 問卷畫面
-![image](https://github.com/Xunhaoz/statistics_final_project/assets/84084535/5fa17e4e-daa3-4de6-934f-997764b9b778)
+![螢幕擷取畫面 2023-05-30 225318](https://github.com/Xunhaoz/statistics_final_project/assets/84084535/da613ce8-ba4c-40c3-90be-3ee0afcbe118)
 ### 計算結果
-![image](https://github.com/Xunhaoz/statistics_final_project/assets/84084535/8c082cb5-788f-4641-b80f-d8279ab2c4b6)
+![螢幕擷取畫面 2023-05-30 225404](https://github.com/Xunhaoz/statistics_final_project/assets/84084535/d5db7784-b3f5-4545-9ea9-0a1c9130e3dc)
 ### t-test
 ```py
 NEWCITY.xlsx : 14.482086042259391
