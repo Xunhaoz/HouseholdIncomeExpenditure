@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>統計學 - AI人資系統</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+          type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ url_for('static', filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content" style="margin-bottom:50px">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h2 mb-4 text-gray-800"> 您的個人資料 </h1>
+                <div class="container">
+                    <form id='Financial_form' method="POST" action="/result_page">
+
+                        <!-- Source of income -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="REL">經濟戶長</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id="REL"
+                                        name="REL">
+                                    <option value="1">是</option>
+                                    <option value="0">否</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Source of income -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="IMR">所得者</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id="IMR"
+                                        name="IMR">
+                                    <option value="1">所得收入者</option>
+                                    <option value="2">非所得收入者</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Source of income -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="AGE">今年幾歲 ( 以五年作為區間 )</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id="AGE" name="AGE">
+                                    <option value="20">15 ~ 20</option>
+                                    <option value="25">20 ~ 25</option>
+                                    <option value="30">25 ~ 30</option>
+                                    <option value="35">30 ~ 35</option>
+                                    <option value="40">35 ~ 40</option>
+                                    <option value="45">40 ~ 45</option>
+                                    <option value="50">45 ~ 50</option>
+                                    <option value="55">50 ~ 55</option>
+                                    <option value="60">55 ~ 60</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  Investing purpose -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="SEX">生理性別</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='SEX'
+                                        name="SEX">
+                                    <option value="1">男性</option>
+                                    <option value="2">女性</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  Currently available funds -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="EDU">教育程度</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='EDU' name="EDU">
+                                    <option value="1">不識字</option>
+                                    <option value="2">自修</option>
+                                    <option value="3">國小</option>
+                                    <option value="4">國(初)中(初職)</option>
+                                    <option value="5">高中</option>
+                                    <option value="6">高職</option>
+                                    <option value="7">專科(五專前三年劃記高職)</option>
+                                    <option value="8">大學</option>
+                                    <option value="9">碩士</option>
+                                    <option value="10">博士</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  period of financial management -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="IND">行業別</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='IND' name="IND">
+                                    <option value="0">無業者（含無職業家庭之經濟戶長）</option>
+                                    <option value="1">農、牧業</option>
+                                    <option value="2">林業及伐木業</option>
+                                    <option value="3">漁業</option>
+                                    <option value="5">礦業及土石採取業</option>
+                                    <option value="8">製造業</option>
+                                    <option value="35">電力及燃氣供應業</option>
+                                    <option value="36">用水供應及污染整治業</option>
+                                    <option value="41">營造業</option>
+                                    <option value="45">批發及零售業</option>
+                                    <option value="55">住宿及餐飲業</option>
+                                    <option value="49">運輸及倉儲業</option>
+                                    <option value="58">資訊及通訊傳播業</option>
+                                    <option value="64">金融及保險業</option>
+                                    <option value="67">不動產業</option>
+                                    <option value="69">專業、科學及技術服務業</option>
+                                    <option value="77">支援服務業</option>
+                                    <option value="85">教育服務業</option>
+                                    <option value="86">醫療保健及社會工作服務業</option>
+                                    <option value="90">藝術、娛樂及休閒服務業</option>
+                                    <option value="94">其他服務業</option>
+                                    <option value="83">公共行政及國防;強制性社會安全</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  familiarity of investment -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="OCC">職業別</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='OCC' name="OCC">
+                                    <option value="0">無業者（含無職業家庭之經濟戶長）</option>
+                                    <option value="1">民意代表、主管及經理人員</option>
+                                    <option value="2">專業人員</option>
+                                    <option value="3">技術員及助理專業人員</option>
+                                    <option value="4">事務支援人員</option>
+                                    <option value="5">服務及銷售工作人員</option>
+                                    <option value="61">農事、畜牧及有關工作者</option>
+                                    <option value="62">林業生產人員</option>
+                                    <option value="63">漁業生產人員</option>
+                                    <option value="7">技藝有關工作人員</option>
+                                    <option value="8">機械設備操作及組裝人員</option>
+                                    <option value="9">基層技術工及勞力工</option>
+                                    <option value="10">現役軍人</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  familiarity of investment -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="WKCLASS">從業身分別</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='WKCLASS'
+                                        name="WKCLASS">
+                                    <option value="1">雇主</option>
+                                    <option value="2">受雇者(受雇)</option>
+                                    <option value="3">自營作業者(自營)</option>
+                                    <option value="4">無酬家屬工作者(無酬)</option>
+                                    <option value="5">失業者(失業)</option>
+                                    <option value="7">學生(包括升學補習班之學生)</option>
+                                    <option value="8">主婦(夫)</option>
+                                    <option value="9">其他(含未滿7歲兒童、小學一年級新生、7-14歲之失學兒童、無工作意願者)
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  familiarity of investment -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="WORKPLACE">工作地點</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='WORKPLACE'
+                                        name="WORKPLACE">
+                                    <option value="1">離島</option>
+                                    <option value="2">宜蘭縣</option>
+                                    <option value="3">桃園縣</option>
+                                    <option value="4">新竹縣</option>
+                                    <option value="5">苗栗縣</option>
+                                    <option value="7">彰化縣</option>
+                                    <option value="8">南投縣</option>
+                                    <option value="9">雲林縣</option>
+                                    <option value="10">嘉義縣</option>
+                                    <option value="13">屏東縣</option>
+                                    <option value="14">台東縣</option>
+                                    <option value="15">花蓮縣</option>
+                                    <option value="16">澎湖縣</option>
+                                    <option value="17">基隆市</option>
+                                    <option value="18">新竹市</option>
+                                    <option value="20">嘉義市</option>
+                                    <option value="63">臺北市</option>
+                                    <option value="64">高雄市</option>
+                                    <option value="65">新北市</option>
+                                    <option value="66">臺中市</option>
+                                    <option value="67">臺南市</option>
+                                    <option value="68">桃園市</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <!--  familiarity of investment -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="MRG">婚姻狀況</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='MRG'
+                                        name="MRG">
+                                    <option value="90">配偶為戶內人口</option>
+                                    <option value="92">配偶為戶外人口</option>
+                                    <option value="93">同居</option>
+                                    <option value="97">離婚</option>
+                                    <option value="97">分居</option>
+                                    <option value="97">寡居</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--  familiarity of investment -->
+                        <div class="form-group">
+                            <label class="text-lg text-primary" for="PT">兼業別</label>
+                            <div class="d-flex justify-content-center my-2">
+                                <select class="form-control form-control-lg w-75 text-gray-900" id='PT'
+                                        name="PT">
+                                    <option value="1">有兼業者</option>
+                                    <option value="2">無兼業者</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <input type="submit" class="btn btn-primary btn-icon-split p-md-2">
+                    </form>
+
+
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Xunhaoz Website 2023</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<!-- Custom scripts for all pages-->
+<script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+
+</body>
+
+</html>
