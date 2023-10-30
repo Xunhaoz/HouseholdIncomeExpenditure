@@ -1,7 +1,7 @@
-# statistics_final_project
+# Taiwan Salary Prediction
 
 ## 描述
-這是一個很亂的統計學期末專案。
+這個專案會根據台灣的家庭收支調查表的資料進行機器學習訓練，並預測薪資結果。
 
 ## 專案架構
 ```
@@ -43,7 +43,7 @@ cd statistics_final_project
 ## step two
 建立虛擬環境
 ```sh
-python3 -m venv env
+python3 -m venv env # python 3.9
 .\env\Script\activate # windows
 source .\env\bin\activate # linux
 ```
